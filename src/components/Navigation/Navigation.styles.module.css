@@ -1,0 +1,15 @@
+.Navigation {
+  margin: 0 auto;
+  background-color: var(--color-secondary);
+}
+
+.Navigation ul {
+  margin: 0 1rem 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Navigation li {
+  list-style: none;
+}
