@@ -9,6 +9,7 @@ const InputWLabel = (props) => (
       className={classes.Input}
       type={props.type}
       name={props.name}
+      onChange={props.changed}
     ></input>
   </div>
 );
@@ -17,6 +18,7 @@ InputWLabel.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
   label: PropTypes.string,
+  changed: PropTypes.func,
 };
 
 export default InputWLabel;

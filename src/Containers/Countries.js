@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../components/Button/Button";
 import Results from "../components/Results/Results";
 import { connect } from "react-redux";
@@ -16,6 +16,16 @@ const Countries = (props) => {
     q3:
       "List all the countries on the client and create a field to filter them by name.",
   };
+
+  let [searchField, updateField] = useState(null);
+
+  //compare All country names passed from the store with the string inputed in the search field and return the countries that fully or partial match the string
+  let allCountries = searchField
+    ? props.allCountries.filter((country) => {
+        return country.name.toLowerCase().includes(searchField.toLowerCase());
+      })
+    : props.allCountries;
+
   return (
     <div>
       <h1>Questions</h1>
@@ -65,14 +75,15 @@ const Countries = (props) => {
           Get All Countries
         </Button>
         {props.allCountries ? (
-          <div className={classes.container}>
+          <div>
             <h2>Results</h2>
             <InputWLabel
               name={"search"}
               label={"Search"}
               type={"search"}
-            />{" "}
-            <Results countries={props.allCountries} />
+              changed={(ev) => updateField((searchField = ev.target.value))}
+            />
+            <Results countries={allCountries} />
           </div>
         ) : null}
       </div>
