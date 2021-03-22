@@ -11,11 +11,33 @@ app.use(express.json());
 axios.defaults.baseURL = "https://restcountries.eu/rest/v2/";
 
 app.post("/api", (req, res) => {
-  const countries = req.body[0];
+  const [searchType, countries = "", isFullName] = [
+    req.body.searchBy,
+    req.body.country,
+    req.body.isFullName ? "?fullText=true" : "?fullText=false",
+  ];
+
+  const generateRequestsArr = (searchType, countries, isFullName) => {
+    // if countries is a string convert to an array
+    countries = Array.isArray(countries) ? countries : [countries];
+    const allRequests = [];
+    let countryURL = "";
+
+    // Build the url for api request for every country and store to the allRequests array
+    countries.forEach((country) => {
+      countryURL = `/${searchType}/${country}${isFullName}&fields=name`;
+      allRequests.push(axios.get(countryURL));
+    });
+
+    return allRequests;
+  };
+
+  // calling generateRequestsArr will return an array of URLS which than axios will call
   axios
-    .get(`/name/${countries}?fields=name`)
+    .all(generateRequestsArr(searchType, countries, isFullName))
     .then((response) => {
-      res.send(JSON.stringify(response.data[0]));
+      //Send back the responses in an array of objects
+      res.send(response.flatMap((res) => res.data));
     })
     .catch((err) => console.log(err));
 });

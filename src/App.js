@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.css";
-// import axios from "axios";
+import Countries from "./Containers/Countries";
 import Navigation from "./components/Navigation/Navigation";
 import { connect } from "react-redux";
 import propTypes from "prop-types";
 
-const App = (props) => {
-  console.log(props);
+const App = () => {
   return (
     // axios
     //   .post("http://localhost:5000/api", ["Malta"])
@@ -19,7 +18,9 @@ const App = (props) => {
 
     <div className="App">
       <Navigation />
-      <h1>{props.test}</h1>
+      <main className="main">
+        <Countries />
+      </main>
     </div>
   );
 };
