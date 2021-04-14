@@ -11,10 +11,13 @@ const Navigation = () => (
         </NavigationItem>
       </li>
       <li>
-        <NavigationItem linkTo={"/Game"}>Game</NavigationItem>
+        <NavigationItem linkTo={"/game"}>Game</NavigationItem>
       </li>
       <li>
-        <NavigationItem linkTo={"/Sign-In"}>Sign In</NavigationItem>
+        <NavigationItem linkTo={"/login"}>Login</NavigationItem>
+      </li>
+      <li>
+        <NavigationItem linkTo={"/register"}>Register</NavigationItem>
       </li>
     </ul>
   </nav>

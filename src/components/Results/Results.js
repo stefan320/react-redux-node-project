@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import * as classes from "./Results.style.module.css";
+import * as classes from "./Results.styles.module.css";
 
 // Map through all countries and display the result
 const Results = (props) => (

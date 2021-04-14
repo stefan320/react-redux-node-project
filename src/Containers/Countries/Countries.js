@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Button from "../components/Button/Button";
-import Results from "../components/Results/Results";
+import Button from "../../components/Button/Button";
+import Results from "../../components/Results/Results";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import * as actionCreators from "../store/actions/countriesActions";
-import InputWLabel from "../components/Input/Input";
+import * as actionCreators from "../../store/actions/countriesActions";
+import InputWLabel from "../../components/Input/Input";
 import * as classes from "./Countries.styles.module.css";
 
 const Countries = (props) => {
@@ -27,7 +27,7 @@ const Countries = (props) => {
     : props.allCountries;
 
   return (
-    <div>
+    <div className="wrapping-default">
       <h1>Questions</h1>
       <div className={classes.container}>
         <p>{questions.q1}</p>

@@ -1,3 +1,16 @@
 .Input {
-  margin-left: 10px;
+  padding: 10px 0;
+  border-radius: 6px;
+  transition: border-bottom 0.5s;
+}
+
+.Input:focus {
+  outline: transparent;
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+.Label {
+  color: var(--color-quinary);
+  font-weight: 500;
+  text-transform: uppercase;
 }

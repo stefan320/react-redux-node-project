@@ -1,16 +1,24 @@
 :root {
-  --color-primary: #218380;
+  /* --color-primary: #218380;
   --color-secondary: #8f2d56;
   --color-tertiary: #d81159;
   --color-quaternary: #ffbc42;
+  --color-quinary: #fff; */
+
+  --color-primary: #30a9de;
+  --color-secondary: #e53a40;
+  --color-tertiary: #090707;
+  --color-quaternary: #efdc05;
   --color-quinary: #fff;
 }
 body {
   box-sizing: border-box;
 }
 
+.main > * {
+  margin: 0;
+}
 
-.main {
-  margin:0;
+.wrapping-default {
   padding: 0 1rem;
 }

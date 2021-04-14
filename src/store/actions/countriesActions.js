@@ -4,7 +4,7 @@ import instance from "../../axios";
 export const fetchCountry = (payload, actionCreator) => {
   return (dispatch) => {
     instance
-      .post("/", payload)
+      .post("/api", payload)
       .then((res) => {
         dispatch(actionCreator(res.data));
       })

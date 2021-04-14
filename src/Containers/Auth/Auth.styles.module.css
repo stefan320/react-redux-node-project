@@ -1,0 +1,10 @@
+.Auth {
+  background-color: var(--color-tertiary);
+  /* 53px = Navbar Height */
+  height: calc(100vh - 53px);
+}
+.Image {
+  height: 18vh;
+  width: 100%;
+  object-fit: cover;
+}

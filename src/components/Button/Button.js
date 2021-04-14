@@ -3,9 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Button = (props) => (
-  <div className={classes.Button} onClick={props.clicked}>
+  <button className={classes.Button} onClick={props.clicked}>
     {props.children}
-  </div>
+  </button>
 );
 
 Button.propTypes = {
